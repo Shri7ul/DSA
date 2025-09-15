@@ -36,8 +36,15 @@ int BinarySearchlast(int a[],int low,int high,int key){
      return ans;
 }
 
+int CountOccurrences(int arr[],int low,int high,int target) {
+    int index1st=BinarySearch1st(arr,low,high,target);
+    if(index1st==-1) return 0;
+    int indexlast=BinarySearchlast(arr,low,high,target);
+    return (indexlast-index1st)+1;
+}
+
 int main(){
-    int n,target;
+    int n,target,Count;
     cout<<"Enter Array Size";
     cin>>n;
     int arr[n];
@@ -46,9 +53,9 @@ int main(){
     }
     cout<<"Enter Target";
     cin>>target;
-    int index1st=BinarySearch1st(arr,0,n-1,target);
-    int indexlast=BinarySearchlast(arr,0,n-1,target);
-    cout<<index1st<<","<<indexlast;
+    Count=CountOccurrences(arr,0,n-1,target);
+    cout<<Count;
 
 }
+
 

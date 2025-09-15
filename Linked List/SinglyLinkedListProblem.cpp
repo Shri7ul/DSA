@@ -125,12 +125,26 @@ int Sum(){
    }
    return sum;
 }
+void Reverse(){
+    ListNode *curr=head;
+    ListNode *next=nullptr;
+    ListNode *prev=nullptr;
+
+    while(curr !=nullptr){
+        next=curr->next;
+        curr->next=prev;
+        prev=curr;
+        curr=next;
+    }
+    head=prev;
+
+}
 
 
 int main(){
     int data,key,n;
     while(1){
-        cout<<endl<<"1.Insert First"<<endl<<"2.Insert Last"<<endl<<"3.Insert After"<<endl<<"4.Delete First"<<endl<<"5.Delete Last"<<endl<<"6.Delete After"<<endl<<"7.Search"<<endl<<"8.Print"<<endl<<"9.Sum LinkedList"<<endl<<"10.Exit"<<endl;
+        cout<<endl<<"1.Insert First"<<endl<<"2.Insert Last"<<endl<<"3.Insert After"<<endl<<"4.Delete First"<<endl<<"5.Delete Last"<<endl<<"6.Delete After"<<endl<<"7.Search"<<endl<<"8.Print"<<endl<<"9.Sum LinkedList"<<endl<<"10.Reverse"<<endl<<"11.Exit"<<endl;
         cin>>n;
        if(n==1){
         cin>>data;
@@ -167,6 +181,11 @@ int main(){
         cout<<"Sum="<<Sum()<<endl;
        }
        else if(n==10){
+          Reverse();
+         PrintLIstNode();
+       }
+
+       else if(n==11){
         break;
        }
 

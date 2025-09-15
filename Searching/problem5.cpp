@@ -8,10 +8,10 @@ int BinarySearch(int a[],int low,int high,int key){
             return mid;
         }
         else if(a[mid]>key){
-            low=mid;
+            low=mid+1;
         }
         else if(a[mid]<key){
-            high=mid;
+            high=mid-1;
         }
      }
      return -1;
