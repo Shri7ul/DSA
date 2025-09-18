@@ -2,14 +2,14 @@
 using namespace std;
 
 struct Node {
-    char data;
+    string data;
     Node *next;
     Node *prev;
 };
 Node *head = nullptr;
 Node *tail = nullptr;
 
-Node *CreateNode(char data) {
+Node *CreateNode(string data) {
     Node *temp = new Node();
     temp->data = data;
     temp->next = nullptr;
@@ -17,7 +17,7 @@ Node *CreateNode(char data) {
     return temp;
 }
 
-void InsertLast(char data) {
+void InsertLast(string data) {
     if (head == nullptr) {
         head = CreateNode(data);
         tail = head;
@@ -44,42 +44,37 @@ bool IsPalindrome() {
 }
 
 int main() {
-    InsertLast('50');
-    InsertLast('20');
-    InsertLast('30');
-    InsertLast('20');
-    InsertLast('50');
-    if (IsPalindrome()) {
+    int choice;
+    string val;
+    while(1){
+        cout<<"\nMenu:\n";
+        cout<<"1. Insert into List\n";
+        cout<<"2. Check is Palindrome\n";
+        cout<<"3. Exit\n";
+        cout<<"Enter choice: ";
+        cin>>choice;
+
+        if(choice==1){
+            cout<<"Enter value for List: ";
+            cin>>val;
+            InsertLast(val);
+        }
+        else if(choice==2){
+              if (IsPalindrome()) {
         cout << "True" << endl;
     } else {
         cout << "False" << endl;
     }
 
-    head = tail = nullptr;
-
-    InsertLast('50');
-    InsertLast('20');
-    InsertLast('20');
-    InsertLast('50');
-    if (IsPalindrome()) {
-        cout << "True" << endl;
-    } else {
-        cout << "False" << endl;
+        }
+        else if(choice==3){
+            cout<<"Exiting...\n";
+            break;
+        }
+        else{
+            cout<<"Invalid choice!\n";
+        }
     }
-
-    head = tail = nullptr;
-
-    InsertLast('a');
-    InsertLast('b');
-    InsertLast('c');
-    InsertLast('c');
-    InsertLast('c');
-    if (IsPalindrome()) {
-        cout << "True" << endl;
-    } else {
-        cout << "False" << endl;
-    }
-
     return 0;
 }
 

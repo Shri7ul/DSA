@@ -58,22 +58,39 @@ void BubbleSort() {
         temp = curr;
     } while (swapped);
 }
-
 int main() {
-    InsertLast(4);
-    InsertLast(2);
-    InsertLast(5);
-    InsertLast(1);
-    InsertLast(3);
+    int choice, val;
+    while(1){
+        cout<<"\nMenu:\n";
+        cout<<"1. Insert into List\n";
+        cout<<"2. Print List After Sorting\n";
+        cout<<"3. Exit\n";
+        cout<<"Enter choice: ";
+        cin>>choice;
 
-    cout << "Before Sorting: ";
-    PrintList();
+        if(choice==1){
+            cout<<"Enter value for List: ";
+            cin>>val;
+            InsertLast(val);
+        }
+        else if(choice==2){
+            cout << "Before Sorting: ";
+          PrintList();
 
-    BubbleSort();
+          BubbleSort();
 
-    cout << "After Sorting: ";
-    PrintList();
-
+        cout << "After Sorting: ";
+         PrintList();
+        }
+        else if(choice==3){
+            cout<<"Exiting...\n";
+            break;
+        }
+        else{
+            cout<<"Invalid choice!\n";
+        }
+    }
     return 0;
 }
+
 

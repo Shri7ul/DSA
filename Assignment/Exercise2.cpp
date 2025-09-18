@@ -46,23 +46,40 @@ void RemoveDuplicates() {
         }
     }
 }
-
 int main() {
-    InsertLast(10);
-    InsertLast(10);
-    InsertLast(20);
-    InsertLast(20);
-    InsertLast(30);
-    InsertLast(30);
+    int choice, val;
+    while(1){
+        cout<<"\nMenu:\n";
+        cout<<"1. Insert into List\n";
+        cout<<"2. Print List After Remove Duplicate\n";
+        cout<<"3. Exit\n";
+        cout<<"Enter choice: ";
+        cin>>choice;
 
-    cout << "Original List: ";
-    PrintList();
+        if(choice==1){
+            cout<<"Enter value for List: ";
+            cin>>val;
+            InsertLast(val);
+        }
+        else if(choice==2){
+            cout << "Original List: ";
+            PrintList();
 
-    RemoveDuplicates();
+          RemoveDuplicates();
 
-    cout << "After Removing Duplicates: ";
-    PrintList();
-
+         cout << "After Removing Duplicates: ";
+         PrintList();
+        }
+        else if(choice==3){
+            cout<<"Exiting...\n";
+            break;
+        }
+        else{
+            cout<<"Invalid choice!\n";
+        }
+    }
     return 0;
 }
+
+
 
