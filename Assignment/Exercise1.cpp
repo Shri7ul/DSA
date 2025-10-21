@@ -42,7 +42,7 @@ void InsertLast2(int data){
 }
 
 void MergeNode(){
-    if(head1==nullptr) { // যদি list1 খালি হয়
+    if(head1==nullptr) { 
         head=head2;
         tail=tail2;
     }
